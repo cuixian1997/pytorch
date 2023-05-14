@@ -1,0 +1,19 @@
+﻿<Window x:Class="BlankApp2.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Block1" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewA"></Button>
+            <Button Content="Block2" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewB"></Button>
+            <Button Content="Block3" Margin="5" Command="{Binding OpenCommand}" CommandParameter="ViewC"></Button>
+        </StackPanel>
+        <ContentControl  Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>
+</Window>
