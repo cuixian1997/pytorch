@@ -42,6 +42,9 @@ class DefectParse_v18:
         最后处理
             先把final_stage重新写一下，把各个文件分开保存。
             对于defect，如果是小文件，才会保存结果
+            
+            
+            明天先把defect分段、后处理、治理、保存的逻辑写好，然后修改后处理和治理，最后f inal分开保存。
         '''
         pass
 
@@ -55,7 +58,7 @@ class DefectParse_v18:
         processed_list = list()
         while (len(defect_list) > 0):
             defect_df_section = pd.DataFrame(defect_list[:100000] if len(defect_list) >= 100000 else defect_list,
-                                             columns=columns, )
+                                             columns=columns)
             defect_list = defect_list[100000:]
             processed_list.append(resize_img())
 
